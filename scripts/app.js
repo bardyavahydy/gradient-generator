@@ -15,6 +15,8 @@ const generateColor = () =>{
 }
 generateColor()
 
+const liveGradient = () => body.style.background = `linear-gradient(${arrow}, ${inputColorA.value}, ${inputColorB.value})`
+
 const copyLinearGradient = () =>{
     textarea.select()
     $.execCommand('copy')
@@ -32,3 +34,5 @@ buttonsArrow.forEach(buttonArrow =>{
 
 buttonGenerate.addEventListener('click', generateColor)
 copyBtn.addEventListener('click', copyLinearGradient)
+inputColorA.addEventListener('input', liveGradient)
+inputColorB.addEventListener('input', liveGradient)
